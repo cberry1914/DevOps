@@ -1,0 +1,54 @@
+# ===== Terraform =====
+# Local plugin cache - large, regenerated automatically by `terraform init`
+**/.terraform/
+
+# State files - track your ACTUAL deployed infra, can contain sensitive values
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Variable files - often hold secrets, region-specific overrides, etc.
+*.tfvars
+*.tfvars.json
+
+# Terraform's local lock/plan artifacts
+crash.log
+crash.*.log
+*.tfplan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ===== Ansible =====
+# Ansible's temporary per-run cache/facts data
+*.retry
+.ansible/
+
+# Vault-encrypted secret files - if you ever use ansible-vault, never commit the password file
+vault_pass.txt
+*.vault_pass
+
+# ===== Kubernetes =====
+# kubeconfig files - contain cluster credentials/certificates, equivalent to an SSH key
+kubeconfig
+*.kubeconfig
+kubeconfig.yaml
+
+# Helm's local dependency cache, if you get to using Helm charts later
+charts/*.tgz
+**/charts/*/charts
+
+# ===== SSH keys - relevant across all of the above =====
+*.pem
+id_rsa
+id_rsa.pub
+github_key
+github_key.pub
+*_key
+*_key.pub
+
+# ===== General editor/OS clutter =====
+.DS_Store
+*.swp
+.vscode/
