@@ -29,7 +29,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   default_node_pool {
     name       = "default"
     node_count = 1
-    vm_size    = "Standard_B2s"
+    vm_size    = "Standard_D2s_v3"
   }
 #AKS needs its own identity to manage other Azure resources on your behalf ex. creating load balancers when you make a LoadBalancer Service
 #SystemAssigned tells Azure to automatically create and manage that identity for you
