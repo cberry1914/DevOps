@@ -6,12 +6,15 @@ terraform {
     }
   }
 }
-
+#empty features block is required syntax even with nothing inside it. TF automatically uses existing az login session. 
+#Real production setups usually use a dedicated more restricted service identity instead of a personal login
 provider "azurerm" { #configures the actual connection to Azure
-  features {}   #empty features block is required syntax even with nothing inside it. TF automatically uses existing az login session. Real proeuction setups usually use a dedicated more restricted service identity instead of a personal login
+  features {}   
 }
-
-resource "azurerm_resource_group" "practice" {  #the actual thing being created "azurerm_resource_group" is the resource type-is defined by the azurerm provider. "practice" is a local name alias. "name" and "location" are the actual resource groups real name and region. This shows up when running 'az group list'
+#the actual thing being created "azurerm_resource_group" is the resource type and is defined by the azurerm provider. 
+#"practice" is a local name alias. 
+#"name" and "location" are the actual resource groups real name and region. This shows up when running azure command 'az group list'
+resource "azurerm_resource_group" "practice" {  
   name     = "terraform-practice-rg"
   location = "centralus"
   tags = {
