@@ -17,6 +17,11 @@ spec:
           image: cberry1914/visit-counter:v1
           ports:
             - containerPort: 5000
+          resources:
+            limits:
+              memory: "128Mi"
+            requests:
+              memory: "64Mi"
           env:
             - name: REDIS_HOST
               value: redis
